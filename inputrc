@@ -1,0 +1,26 @@
+#################################################################################
+# The following vi-shell editor commands clash with tmux vi keys present in the
+# .tmux.conf file
+# So currently diabling them
+#
+## sets the editing-mode of the shell to vi commands
+#set editing-mode vi
+#set show-mode-in-prompt on
+#set vi-cmd-mode-string "\1\e[2 q\2"
+#set vi-ins-mode-string "\1\e[6 q\2"
+#
+## set the keymap jj to vim's movement mode
+#"jj": vi-movement-mode
+#
+#################################################################################
+
+
+#################################################################################
+# ignore case for the completion when we press TAB in the shell
+#################################################################################
+set completion-ignore-case on
+
+#################################################################################
+# Shut up the audible bell in the shell
+#################################################################################
+set bell-style visible

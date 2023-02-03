@@ -1,0 +1,24 @@
+# This file contains the configuration of tools installed externally
+
+# Following is the setup for powerline; refer to https://www.youtube.com/watch?v=zfm2E4E7Dok
+#################################################################################
+# this is the place where powerline-daemon is found
+# use find / 2>/dev/null | grep powerline-daemon
+export PATH="$PATH:/home/vamsi/.local/bin/"
+export LC_ALL=en_US.UTF-8
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+source /home/vamsi/.local/lib/python3.10/site-packages/powerline/bindings/bash/powerline.sh
+
+#################################################################################
+# Custom Aliases
+#################################################################################
+alias v=vim
+
+#################################################################################
+# z-plugin from https://github.com/rupa/z
+# have install z.sh at $HOME/.config/z
+#################################################################################
+. $HOME/.config/z/z.sh
+#################################################################################
