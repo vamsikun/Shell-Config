@@ -4,12 +4,12 @@
 #################################################################################
 # this is the place where powerline-daemon is found
 # use find / 2>/dev/null | grep powerline-daemon
-export PATH="$PATH:/home/vamsi/.local/bin/"
+export PATH="$PATH:$HOME/.local/bin/"
 export LC_ALL=en_US.UTF-8
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
-source /home/vamsi/.local/lib/python3.10/site-packages/powerline/bindings/bash/powerline.sh
+source $HOME/.local/lib/python3.10/site-packages/powerline/bindings/bash/powerline.sh
 
 #################################################################################
 # Custom Aliases
@@ -30,4 +30,9 @@ cdl() { cd "$@" && ls; }
 . $HOME/.config/z/z.sh
 #################################################################################
 
-
+#################################################################################
+# mu-repo for maintaining multiple git repos
+#################################################################################
+export PATH="$PATH:$HOME/.config/mu-repo/"
+# prints the status of registered repos with the mu
+mu st

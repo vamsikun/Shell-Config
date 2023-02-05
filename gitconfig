@@ -1,0 +1,25 @@
+[user]
+	name = vamsikun
+	email = vamsikn.pallapothula@gmail.com
+[init]
+	# Sets the default branch to "main" instead of "master"
+	defaultBranch = main
+[advice]
+	# Won't show hints when we execute "status" command
+	statusHints = false
+[color]
+	# "Always" : Outputs in color even when we use piping
+	status = always
+
+#[color "status"]
+#	# Set's the branch color when we execute "status" command
+#	branch = magenta bold
+#	# Set's the untracked files color
+#	untracked = red bold
+
+# sets the diff tool to vimdiff
+[diff]
+	tool = vimdiff
+# sets the merge tool to vimdiff
+[merge]
+	tool = vimdiff
