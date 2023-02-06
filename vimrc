@@ -12,9 +12,11 @@ call plug#begin('~/.vim/plugged')
    " for python indents
    Plug 'Yggdroot/indentLine'
    " jedi vim
-   Plug 'davidhalter/jedi-vim'
+   " Plug 'davidhalter/jedi-vim'
    " airline tab below vim
    " Plug 'vim-airline/vim-airline'
+   " you complete me
+   Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
 
    call plug#end()
    "set dark gruvbox theme
@@ -38,9 +40,9 @@ call plug#begin('~/.vim/plugged')
 
    :set backspace=indent,eol,start
 
-   let g:jedi#popup_on_dot = 0
-   let g:jedi#popup_select_first = 0
-   let g:jedi#completions_command = "<C-N>"
+   " let g:jedi#popup_on_dot = 0
+   " let g:jedi#popup_select_first = 0
+   " let g:jedi#completions_command = "<C-N>"
 	
    " send current cell to the target pane
    nmap <C-e> <Plug>SlimeSendCell
@@ -59,3 +61,6 @@ call plug#begin('~/.vim/plugged')
    set rtp+=/home/vamsi/.local/lib/python3.10/site-packages/powerline/bindings/vim/
    set laststatus=2
    set t_Co=256
+
+   " autoclose preview ycm
+   let g:ycm_autoclose_preview_window_after_completion = 1

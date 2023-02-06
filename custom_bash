@@ -24,10 +24,9 @@ alias v=vim
 cdl() { cd "$@" && ls; }
 
 #################################################################################
-# z-plugin from https://github.com/rupa/z
-# have install z.sh at $HOME/.config/z
+# autojump from https://github.com/wting/autojump
 #################################################################################
-#. $HOME/.config/z/z.sh
+[[ -s /home/vamsi/.autojump/etc/profile.d/autojump.sh ]] && source /home/vamsi/.autojump/etc/profile.d/autojump.sh
 #################################################################################
 
 #################################################################################
