@@ -17,7 +17,14 @@ call plug#begin('~/.vim/plugged')
    " Plug 'vim-airline/vim-airline'
    " you complete me
    Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
-
+   " Dispatch plugin
+   Plug 'tpope/vim-dispatch'
+   " Fugitive Plugin
+   Plug 'tpope/vim-fugitive'
+   " Git-gutter plugin
+   Plug 'airblade/vim-gitgutter'
+   " Ctrl-p fuzzy finder
+   Plug 'ctrlpvim/ctrlp.vim'
    call plug#end()
    "set dark gruvbox theme
    set bg=dark
@@ -27,13 +34,15 @@ call plug#begin('~/.vim/plugged')
    set relativenumber
    set number
 
-   let g:slime_target = "tmux"
-   let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
-   let g:slime_cell_delimiter = "#%%"
-   let g:slime_python_ipython = 1
-   let g:slime_dont_ask_default = 1
-   let g:slime_bracketed_paste = 1
-   let g:slime_no_mappings = 1
+   " These slime options would be useful for python interactive sessions
+   "let g:slime_target = "tmux"
+   "let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
+   "let g:slime_cell_delimiter = "#%%"
+   "let g:slime_python_ipython = 1
+   "let g:slime_dont_ask_default = 1
+   "let g:slime_bracketed_paste = 1
+   "let g:slime_no_mappings = 1
+
    " nnoremap q <C-v>
    nmap <C-t> :NERDTreeToggle<CR>
    set encoding=UTF-8
@@ -45,12 +54,13 @@ call plug#begin('~/.vim/plugged')
    " let g:jedi#completions_command = "<C-N>"
 	
    " send current cell to the target pane
-   nmap <C-e> <Plug>SlimeSendCell
+   nmap <leader>s <Plug>SlimeSendCell
 
    " enable tabline
    "let g:airline#extensions#tabline#enabled = 1
 
-"   "au BufNewFile *.cpp 0r ~/.vim/contest.cpp | let IndentStyle = "cpp"
+   " au BufNewFile *.cpp 0r ~/.vim/contest.cpp | let IndentStyle = "cpp"
+   au BufNewFile *.sh 0r ~/.vim/template.sh | let IndentStyle = "sh"
 
    set tabstop=4
 
@@ -64,3 +74,9 @@ call plug#begin('~/.vim/plugged')
 
    " autoclose preview ycm
    let g:ycm_autoclose_preview_window_after_completion = 1
+   " set update time for git gutter
+   set updatetime=100
+   " ignore dirs for ctrlp using regex pattern matching
+   let g:ctrlp_custom_ignore = '.*miniconda3.*'
+   " insert the current absolute path of file
+   inoremap \fn <C-R>=expand("%:p")<CR>
