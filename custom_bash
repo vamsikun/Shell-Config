@@ -40,7 +40,7 @@ mu st
 # To kill all the screen sessions
 #################################################################################
 killd () {
-    for session in $(screen -ls | grep -o '[0-9]\{4\}')
+    for session in $(screen -ls | grep -o '[0-9]\{4,\}')
     do
         screen -S "${session}" -X quit;
     done
