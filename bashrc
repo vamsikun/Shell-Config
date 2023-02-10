@@ -151,3 +151,5 @@ unset __conda_setup
 # Activate ml environment
 #################################################################################
 conda activate mlc
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

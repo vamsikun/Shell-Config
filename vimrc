@@ -23,8 +23,9 @@ call plug#begin('~/.vim/plugged')
    Plug 'tpope/vim-fugitive'
    " Git-gutter plugin
    Plug 'airblade/vim-gitgutter'
-   " Ctrl-p fuzzy finder
-   Plug 'ctrlpvim/ctrlp.vim'
+   " fzf.vim plugin
+   "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+   Plug 'junegunn/fzf.vim'
    call plug#end()
    "set dark gruvbox theme
    set bg=dark
@@ -76,7 +77,11 @@ call plug#begin('~/.vim/plugged')
    let g:ycm_autoclose_preview_window_after_completion = 1
    " set update time for git gutter
    set updatetime=100
-   " ignore dirs for ctrlp using regex pattern matching
-   let g:ctrlp_custom_ignore = '.*miniconda3.*'
    " insert the current absolute path of file
    inoremap \fn <C-R>=expand("%:p")<CR>
+
+   " for using fzf - you have install fzf commandline for this to work
+    set rtp+=~/.fzf
+   " set shortcut for fzf
+   nmap <C-P> :FZF<CR>
+
