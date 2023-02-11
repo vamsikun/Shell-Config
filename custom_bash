@@ -11,23 +11,14 @@ POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 source $HOME/.local/lib/python3.10/site-packages/powerline/bindings/bash/powerline.sh
 
-#################################################################################
-# Custom Aliases
-#################################################################################
-alias v=vim
 
 #################################################################################
 # Custom commands
 #################################################################################
 
 # changes directory and prints the list of files
-cdl() { cd "$@" && ls; }
+#cdl() { cd "$@" && ls; }
 
-#################################################################################
-# autojump from https://github.com/wting/autojump
-#################################################################################
-[[ -s /home/vamsi/.autojump/etc/profile.d/autojump.sh ]] && source /home/vamsi/.autojump/etc/profile.d/autojump.sh
-#################################################################################
 
 #################################################################################
 # mu-repo for maintaining multiple git repos
@@ -37,21 +28,11 @@ export PATH="$PATH:$HOME/.config/mu-repo/"
 mu st
 
 #################################################################################
-# To kill all the screen sessions
-#################################################################################
-killd () {
-    for session in $(screen -ls | grep -o '[0-9]\{4,\}')
-    do
-        screen -S "${session}" -X quit;
-    done
-}
-
-#################################################################################
 # Fuzzy search config
 #################################################################################
-export FZF_DEFAULT_COMMAND="fd --hidden"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
+#export FZF_DEFAULT_COMMAND="find "
+#export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+#export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
 
 alias rgf="rg --files | rg"
 alias rg="rg -g '!{miniconda3}'"
