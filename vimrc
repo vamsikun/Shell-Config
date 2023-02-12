@@ -16,7 +16,7 @@ call plug#begin('~/.vim/plugged')
    " airline tab below vim
    " Plug 'vim-airline/vim-airline'
    " you complete me
-   Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
+   Plug 'ycm-core/YouCompleteMe'
    " Dispatch plugin
    Plug 'tpope/vim-dispatch'
    " Fugitive Plugin
@@ -84,4 +84,6 @@ call plug#begin('~/.vim/plugged')
     set rtp+=~/.fzf
    " set shortcut for fzf
    nmap <C-P> :FZF<CR>
-
+   
+   " adding ycm-cpp completer
+   let g:ycm_global_ycm_extra_conf = "/home/vamsi/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"

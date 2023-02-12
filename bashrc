@@ -121,10 +121,6 @@ fi
 
 # alias mk='make CXXFLAGS="-std=c++11 -O2 -Wall -Wextra"'
 
-#alias crun='./a.out'
-#function compile(){
-#	g++ -g -std=c++17 -pedantic -Wall -Wextra -o "a.out" "$1";
-#}
 
 
 #################################################################################

@@ -36,3 +36,13 @@ mu st
 
 alias rgf="rg --files | rg"
 alias rg="rg -g '!{miniconda3}'"
+
+#################################################################################
+# Function to compile and run cpp programs
+#################################################################################
+function crun(){
+	g++ -g -std=c++17 -pedantic -Wall -Wextra -o "a.out" "$1";
+	if [ $? = "0" ]; then # spaces are required after and before equal sign
+	./a.out;
+	fi
+}
