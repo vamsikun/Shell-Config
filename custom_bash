@@ -1,5 +1,7 @@
 # This file contains the configuration of tools installed externally
 
+. $HOME/.vyak_bash
+
 # Following is the setup for powerline; refer to https://www.youtube.com/watch?v=zfm2E4E7Dok
 #################################################################################
 # this is the place where powerline-daemon is found
