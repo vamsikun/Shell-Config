@@ -87,3 +87,13 @@ call plug#begin('~/.vim/plugged')
    
    " adding ycm-cpp completer
    let g:ycm_global_ycm_extra_conf = "/home/vamsi/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+
+   " highlight search
+   set hlsearch
+
+   " searching and replacing
+   " go to a keyword and press shift+8
+   " this will highlight all the occurences of the keyword
+   " then use the following command
+   nnoremap <Leader>r : %s///g<Left><Left>
+   nnoremap <Leader>rc : %s///gc<Left><Left><Left>
