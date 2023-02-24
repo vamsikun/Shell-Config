@@ -26,6 +26,10 @@ call plug#begin('~/.vim/plugged')
    " fzf.vim plugin
    "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
    Plug 'junegunn/fzf.vim'
+   " vim-star search
+   Plug 'nelstrom/vim-visual-star-search'
+   " Clear search highlights
+   Plug 'haya14busa/is.vim'
    call plug#end()
    "set dark gruvbox theme
    set bg=dark
@@ -95,5 +99,12 @@ call plug#begin('~/.vim/plugged')
    " go to a keyword and press shift+8
    " this will highlight all the occurences of the keyword
    " then use the following command
+   " when in normal mode
    nnoremap <Leader>r : %s///g<Left><Left>
    nnoremap <Leader>rc : %s///gc<Left><Left><Left>
+
+   " when in visual mode, just replace the ones present in the current
+   " selected region
+   xnoremap <Leader>r : s///g<Left><Left>
+   xnoremap <Leader>rc : s///gc<Left><Left><Left>
+
