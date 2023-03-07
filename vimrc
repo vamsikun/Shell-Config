@@ -11,10 +11,6 @@ call plug#begin('~/.vim/plugged')
    Plug 'wincent/terminus'
    " for python indents
    Plug 'Yggdroot/indentLine'
-   " jedi vim
-   " Plug 'davidhalter/jedi-vim'
-   " airline tab below vim
-   " Plug 'vim-airline/vim-airline'
    " you complete me
    Plug 'ycm-core/YouCompleteMe'
    " Dispatch plugin
@@ -28,8 +24,6 @@ call plug#begin('~/.vim/plugged')
    Plug 'junegunn/fzf.vim'
    " vim-star search
    Plug 'nelstrom/vim-visual-star-search'
-   " Clear search highlights
-   Plug 'haya14busa/is.vim'
    call plug#end()
    "set dark gruvbox theme
    set bg=dark
@@ -94,6 +88,8 @@ call plug#begin('~/.vim/plugged')
 
    " highlight search
    set hlsearch
+   " mapping esc,esc to :noh
+   nnoremap <esc><esc> :noh<return><esc>
 
    " searching and replacing
    " go to a keyword and press shift+8

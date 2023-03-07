@@ -1,12 +1,10 @@
 # This file contains the configuration of tools installed externally
 
-. $HOME/.vyak_bash
-
 # Following is the setup for powerline; refer to https://www.youtube.com/watch?v=zfm2E4E7Dok
 #################################################################################
 # this is the place where powerline-daemon is found
 # use find / 2>/dev/null | grep powerline-daemon
-export PATH="$PATH:$HOME/.local/bin/"
+export PATH="$PATH:$HOME/.local/bin/:/usr/local/cuda-12.1/bin/"
 export LC_ALL=en_US.UTF-8
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
@@ -26,8 +24,6 @@ source $HOME/.local/lib/python3.10/site-packages/powerline/bindings/bash/powerli
 # mu-repo for maintaining multiple git repos
 #################################################################################
 export PATH="$PATH:$HOME/.config/mu-repo/"
-# prints the status of registered repos with the mu
-mu st
 
 #################################################################################
 # Fuzzy search config

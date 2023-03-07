@@ -26,6 +26,8 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$PATH:$HOME/.local/bin"
 fi
 
+
+
 # it's better to set both VISUAL and EDITOR; don't know much about their difference
 export VISUAL=vim
 export EDITOR="$VISUAL"
