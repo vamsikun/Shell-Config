@@ -11,8 +11,6 @@ call plug#begin('~/.vim/plugged')
    Plug 'wincent/terminus'
    " for python indents
    Plug 'Yggdroot/indentLine'
-   " you complete me
-   Plug 'ycm-core/YouCompleteMe'
    " Dispatch plugin
    Plug 'tpope/vim-dispatch'
    " Fugitive Plugin
@@ -20,10 +18,12 @@ call plug#begin('~/.vim/plugged')
    " Git-gutter plugin
    Plug 'airblade/vim-gitgutter'
    " fzf.vim plugin
-   "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
    Plug 'junegunn/fzf.vim'
-   " vim-star search
-   Plug 'nelstrom/vim-visual-star-search'
+   " coc plugin
+   Plug 'neoclide/coc.nvim',{'branch':'release'}
+   " Auto-pairs
+   Plug 'jiangmiao/auto-pairs'
+
    call plug#end()
    "set dark gruvbox theme
    set bg=dark
@@ -71,8 +71,6 @@ call plug#begin('~/.vim/plugged')
    set laststatus=2
    set t_Co=256
 
-   " autoclose preview ycm
-   let g:ycm_autoclose_preview_window_after_completion = 1
    " set update time for git gutter
    set updatetime=100
    " insert the current absolute path of file
@@ -104,3 +102,47 @@ call plug#begin('~/.vim/plugged')
    xnoremap <Leader>r : s///g<Left><Left>
    xnoremap <Leader>rc : s///gc<Left><Left><Left>
 
+
+
+" ============================================================================================================
+" coc-vim related settings from here onwards
+"
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved
+set signcolumn=yes
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor
+autocmd CursorHold * silent call CocActionAsync('highlight')
