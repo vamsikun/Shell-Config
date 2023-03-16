@@ -45,13 +45,12 @@ call plug#begin('~/.vim/plugged')
    " nnoremap q <C-v>
    nmap <C-t> :NERDTreeToggle<CR>
    set encoding=UTF-8
+   set smartindent
+   set tabstop=4
+   set shiftwidth=4
 
    :set backspace=indent,eol,start
 
-   " let g:jedi#popup_on_dot = 0
-   " let g:jedi#popup_select_first = 0
-   " let g:jedi#completions_command = "<C-N>"
-	
    " send current cell to the target pane
    nmap <leader>s <Plug>SlimeSendCell
 
@@ -61,7 +60,6 @@ call plug#begin('~/.vim/plugged')
    " au BufNewFile *.cpp 0r ~/.vim/contest.cpp | let IndentStyle = "cpp"
    au BufNewFile *.sh 0r ~/.vim/template.sh | let IndentStyle = "sh"
 
-   set tabstop=4
 
    " usefule for comments
    let @x='i#################################################################################jjVypkAjj'
@@ -146,3 +144,6 @@ endfunction
 
 " Highlight the symbol and its references when holding the cursor
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" quick fix
+nmap <leader>qf <Plug>(coc-fix-current)
