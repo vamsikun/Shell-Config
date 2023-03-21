@@ -23,7 +23,6 @@ call plug#begin('~/.vim/plugged')
    Plug 'neoclide/coc.nvim',{'branch':'release'}
    " Auto-pairs
    Plug 'jiangmiao/auto-pairs'
-
    call plug#end()
    "set dark gruvbox theme
    set bg=dark
@@ -46,8 +45,8 @@ call plug#begin('~/.vim/plugged')
    nmap <C-t> :NERDTreeToggle<CR>
    set encoding=UTF-8
    set smartindent
-   set tabstop=4
-   set shiftwidth=4
+   set tabstop=2
+   set shiftwidth=2
 
    :set backspace=indent,eol,start
 
@@ -77,7 +76,8 @@ call plug#begin('~/.vim/plugged')
    " for using fzf - you have install fzf commandline for this to work
     set rtp+=~/.fzf
    " set shortcut for fzf
-   nmap <C-P> :FZF<CR>
+   nmap <Leader>f :FZF<CR>
+   nmap <Leader>b :Buffers<CR>
    
    " adding ycm-cpp completer
    let g:ycm_global_ycm_extra_conf = "/home/vamsi/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
