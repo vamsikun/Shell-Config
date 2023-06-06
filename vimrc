@@ -23,6 +23,8 @@ call plug#begin('~/.vim/plugged')
    Plug 'neoclide/coc.nvim',{'branch':'release'}
    " Auto-pairs
    Plug 'jiangmiao/auto-pairs'
+	 " side-bar that provides structure of the file
+   Plug 'preservim/tagbar'
    call plug#end()
    "set dark gruvbox theme
    set bg=dark
@@ -46,8 +48,8 @@ call plug#begin('~/.vim/plugged')
    set encoding=UTF-8
    set smartindent
    set tabstop=2
-   set shiftwidth=2
-
+   "set shiftwidth=2
+   "
    :set backspace=indent,eol,start
 
    " send current cell to the target pane
@@ -77,11 +79,9 @@ call plug#begin('~/.vim/plugged')
     set rtp+=~/.fzf
    " set shortcut for fzf
    nmap <Leader>f :FZF<CR>
+   nmap <Leader>ff :Rg<CR>
    nmap <Leader>b :Buffers<CR>
    
-   " adding ycm-cpp completer
-   let g:ycm_global_ycm_extra_conf = "/home/vamsi/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
-
    " highlight search
    set hlsearch
    " mapping esc,esc to :noh
@@ -147,3 +147,18 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " quick fix
 nmap <leader>qf <Plug>(coc-fix-current)
+
+" highlight the current search word with different color
+highlight Search term=standout cterm=bold ctermfg=109 ctermbg=239 gui=bold guifg=#83a598 guibg=#504945
+
+" switching windows in vim
+nnoremap H <C-W>h
+nnoremap J <C-W>j
+nnoremap K <C-W>k
+nnoremap L <C-W>l
+
+" moving one character ahead in insert mode
+inoremap <C-space> <C-o><Space>
+
+" shortcut for prettifier command in html
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument

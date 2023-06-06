@@ -10,24 +10,22 @@
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
+	# include .bashrc if it exists
+	if [ -f "$HOME/.bashrc" ]; then
+		. "$HOME/.bashrc"
+	fi
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$PATH:$HOME/bin"
+if [ -d "$HOME/bin" ]; then
+	PATH="$PATH:$HOME/bin"
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$PATH:$HOME/.local/bin"
+if [ -d "$HOME/.local/bin" ]; then
+	PATH="$PATH:$HOME/.local/bin"
 fi
-
-
 
 # it's better to set both VISUAL and EDITOR; don't know much about their difference
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
