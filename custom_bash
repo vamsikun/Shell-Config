@@ -4,7 +4,7 @@
 #################################################################################
 # this is the place where powerline-daemon is found
 # use find / 2>/dev/null | grep powerline-daemon
-export PATH="$PATH:$HOME/.local/bin/:/usr/local/cuda-12.1/bin/"
+export PATH="$PATH:/usr/local/cuda-12.1/bin/:/opt/neovim/bin"
 export LC_ALL=en_US.UTF-8
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
