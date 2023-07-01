@@ -21,11 +21,6 @@ source $HOME/.local/lib/python3.10/site-packages/powerline/bindings/bash/powerli
 
 
 #################################################################################
-# mu-repo for maintaining multiple git repos
-#################################################################################
-export PATH="$PATH:$HOME/.config/mu-repo/"
-
-#################################################################################
 # Fuzzy search config
 #################################################################################
 #export FZF_DEFAULT_COMMAND="find "
